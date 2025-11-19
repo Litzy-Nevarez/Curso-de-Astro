@@ -1,6 +1,10 @@
 ---
-	import "./../styles/global.css";	
+	import "./../styles/global.css";
+	import Layout from "../layouts/Layout.astro";
+
 	const nombre = "Litzy"
 ---
 
-<h1>Hola { nombre }</h1>
+<Layout>
+	<h1>Hola, {nombre}</h1>
+</Layout>
