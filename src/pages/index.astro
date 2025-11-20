@@ -2,9 +2,13 @@
 	import "./../styles/global.css";
 	import Layout from "../layouts/Layout.astro";
 
+	import image from "./../assets/bg_home.jpg";
+
 	const nombre = "Litzy"
 ---
 
 <Layout>
 	<h1>Hola, {nombre}</h1>
+
+	<img src={image.src} />
 </Layout>
