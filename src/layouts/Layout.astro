@@ -1,13 +1,15 @@
 ---
-	import "./../styles/global.css";
-    import Header from "../components/ui/Header.astro";
-    import Footer from "../components/ui/Footer.astro";
+	import "@/styles/global.css";
+    import Header from "@/components/ui/Header.astro";
+    import Footer from "@/components/ui/Footer.astro";
 
     interface Props {
         title: string
+        subtitle: string
+        bgImage: string
     }
 
-    const { title } = Astro.props
+    const { title, bgImage, subtitle } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -21,11 +23,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="bg-coffee-100">
+        <Header 
+            bgImage={ bgImage }
+            subtitle={ subtitle }
+        />
 
-        <Header />
+        <main class="bg-white p-20 max-w-7xl mx-auto lg:-mt-20 relative">
+            <slot />
+        </main>
 
-        <slot />
+        <slot name="after-main-content"/>
 
         <Footer />
 
